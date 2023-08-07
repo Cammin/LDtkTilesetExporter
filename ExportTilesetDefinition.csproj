@@ -12,6 +12,7 @@
         <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <ApplicationIcon>icon.ico</ApplicationIcon>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,7 +49,10 @@
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Scripts\Exporter.cs" />
+        <Compile Include="Scripts\LDtkTilesetDefExporter.cs" />
+        <Compile Include="Scripts\LDtkTilesetDefinition.cs" />
         <Compile Include="Scripts\Program.cs" />
+        <Compile Include="Scripts\Rectangle.cs" />
         <Compile Include="Scripts\Schema\Converter\Serialize.cs" />
         <Compile Include="Scripts\Schema\Definition\AutoLayerRuleDefinition.cs" />
         <Compile Include="Scripts\Schema\Definition\AutoLayerRuleGroup.cs" />
@@ -97,6 +101,9 @@
         <Compile Include="Scripts\Schema\Level\LevelBackgroundPosition.cs" />
         <Compile Include="Scripts\Schema\Level\NeighbourLevel.cs" />
         <Compile Include="Scripts\Schema\Level\World.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="icon.ico" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

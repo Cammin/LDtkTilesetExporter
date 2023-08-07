@@ -29,9 +29,6 @@ namespace ExportTilesetDefinition
             {
                 Console.WriteLine("Didn't operate any files. Was this export app launched from the correct working directory?");
             }
-            
-
-            //throw new Exception("thing!");
         }
         
         public string TryProject(string dir, string projectName)
@@ -76,10 +73,10 @@ namespace ExportTilesetDefinition
         public void ProcessProject(string projectPath)
         {
             byte[] bytes = File.ReadAllBytes(projectPath);
-
             LdtkJson json = JsonSerializer.Deserialize<LdtkJson>(bytes);
             
-            Console.WriteLine(json.JsonVersion);
+            LDtkTilesetDefExporter exporter = new LDtkTilesetDefExporter(projectPath, 8);
+            exporter.ExportTilesetDefinitions(json);
         }
     }
 }
