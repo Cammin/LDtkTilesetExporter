@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using LDtkUnity;
+using Utf8Json;
 
 namespace ExportTilesetDefinition
 {
@@ -11,24 +13,39 @@ namespace ExportTilesetDefinition
         {
             string dir = Environment.CurrentDirectory;
             Console.WriteLine($"Working from {dir}");
-            
+
+            bool gotOne = false;
             foreach (string projectName in GetOpenAppProjectNames())
             {
-                TryProject(dir, projectName);
+                string projectPath = TryProject(dir, projectName);
+                if (projectPath != null)
+                {
+                    gotOne = true;
+                    ProcessProject(projectPath);
+                }
             }
+
+            if (!gotOne)
+            {
+                Console.WriteLine("Didn't operate any files. Was this export app launched from the correct working directory?");
+            }
+            
+
+            //throw new Exception("thing!");
         }
         
-        public void TryProject(string dir, string projectName)
+        public string TryProject(string dir, string projectName)
         {
             string path = Path.Combine(dir, projectName) + ".ldtk";
 
             if (!File.Exists(path))
             {
                 Console.WriteLine($"No file: {path}");
-                return;
+                return null;
             }
             
             Console.WriteLine($"Got file! {path}");
+            return path;
         }
 
         public List<string> GetOpenAppProjectNames()
@@ -56,6 +73,13 @@ namespace ExportTilesetDefinition
             return projects;
         }
 
-        
+        public void ProcessProject(string projectPath)
+        {
+            byte[] bytes = File.ReadAllBytes(projectPath);
+
+            LdtkJson json = JsonSerializer.Deserialize<LdtkJson>(bytes);
+            
+            Console.WriteLine(json.JsonVersion);
+        }
     }
 }

@@ -36,6 +36,7 @@
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
+        <Reference Include="System.Runtime.Serialization" />
         <Reference Include="System.Threading.Tasks.Extensions">
           <HintPath>Utf8Json\System.Threading.Tasks.Extensions.dll</HintPath>
         </Reference>
@@ -45,9 +46,57 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Exporter.cs" />
-        <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Scripts\Exporter.cs" />
+        <Compile Include="Scripts\Program.cs" />
+        <Compile Include="Scripts\Schema\Converter\Serialize.cs" />
+        <Compile Include="Scripts\Schema\Definition\AutoLayerRuleDefinition.cs" />
+        <Compile Include="Scripts\Schema\Definition\AutoLayerRuleGroup.cs" />
+        <Compile Include="Scripts\Schema\Definition\Definitions.cs" />
+        <Compile Include="Scripts\Schema\Definition\EntityDefinition.cs" />
+        <Compile Include="Scripts\Schema\Definition\EnumDefinition.cs" />
+        <Compile Include="Scripts\Schema\Definition\EnumTagValue.cs" />
+        <Compile Include="Scripts\Schema\Definition\EnumValueDefinition.cs" />
+        <Compile Include="Scripts\Schema\Definition\FieldDefinition.cs" />
+        <Compile Include="Scripts\Schema\Definition\IntGridValueDefinition.cs" />
+        <Compile Include="Scripts\Schema\Definition\LayerDefinition.cs" />
+        <Compile Include="Scripts\Schema\Definition\LdtkCustomCommand.cs" />
+        <Compile Include="Scripts\Schema\Definition\TileCustomMetadata.cs" />
+        <Compile Include="Scripts\Schema\Definition\TilesetDefinition.cs" />
+        <Compile Include="Scripts\Schema\Definition\TilesetRectangle.cs" />
+        <Compile Include="Scripts\Schema\Enum\AllowedRefs.cs" />
+        <Compile Include="Scripts\Schema\Enum\BgPos.cs" />
+        <Compile Include="Scripts\Schema\Enum\Checker.cs" />
+        <Compile Include="Scripts\Schema\Enum\EditorDisplayMode.cs" />
+        <Compile Include="Scripts\Schema\Enum\EditorDisplayPos.cs" />
+        <Compile Include="Scripts\Schema\Enum\EditorLinkStyle.cs" />
+        <Compile Include="Scripts\Schema\Enum\EmbedAtlas.cs" />
+        <Compile Include="Scripts\Schema\Enum\Flag.cs" />
+        <Compile Include="Scripts\Schema\Enum\IdentifierStyle.cs" />
+        <Compile Include="Scripts\Schema\Enum\ImageExportMode.cs" />
+        <Compile Include="Scripts\Schema\Enum\LimitBehavior.cs" />
+        <Compile Include="Scripts\Schema\Enum\LimitScope.cs" />
+        <Compile Include="Scripts\Schema\Enum\RenderMode.cs" />
+        <Compile Include="Scripts\Schema\Enum\TextLanguageMode.cs" />
+        <Compile Include="Scripts\Schema\Enum\TileMode.cs" />
+        <Compile Include="Scripts\Schema\Enum\TileRenderMode.cs" />
+        <Compile Include="Scripts\Schema\Enum\TypeEnum.cs" />
+        <Compile Include="Scripts\Schema\Enum\When.cs" />
+        <Compile Include="Scripts\Schema\Enum\WorldLayout.cs" />
+        <Compile Include="Scripts\Schema\Instance\EntityInstance.cs" />
+        <Compile Include="Scripts\Schema\Instance\FieldInstance.cs" />
+        <Compile Include="Scripts\Schema\Instance\GridPoint.cs" />
+        <Compile Include="Scripts\Schema\Instance\IntGridValueInstance.cs" />
+        <Compile Include="Scripts\Schema\Instance\LayerInstance.cs" />
+        <Compile Include="Scripts\Schema\Instance\LdtkTableOfContentEntry.cs" />
+        <Compile Include="Scripts\Schema\Instance\ReferenceToAnEntityInstance.cs" />
+        <Compile Include="Scripts\Schema\Instance\TileInstance.cs" />
+        <Compile Include="Scripts\Schema\LdtkJson.cs" />
+        <Compile Include="Scripts\Schema\Level\ForcedRefs.cs" />
+        <Compile Include="Scripts\Schema\Level\Level.cs" />
+        <Compile Include="Scripts\Schema\Level\LevelBackgroundPosition.cs" />
+        <Compile Include="Scripts\Schema\Level\NeighbourLevel.cs" />
+        <Compile Include="Scripts\Schema\Level\World.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
