@@ -36,7 +36,7 @@
 	"backupRelPath": null,
 	"levelNamePattern": "%world_Level_%idx",
 	"tutorialDesc": "IntGrid layers can paint tiles automatically using simple RULE SETS.\n\n - Press [SHIFT + R] to toggle auto-layer rendering\n - Click on the RULES button on the left to see/edit rules.",
-	"customCommands": [{ "command": "../bin/Debug/ExportTilesetDefinition.exe", "when": "Manual" }],
+	"customCommands": [{ "command": "../bin/Debug/ExportTilesetDefinition.exe", "when": "AfterSave" }],
 	"flags": ["UseMultilinesType"],
 	"defs": { "layers": [
 		{
@@ -359,7 +359,7 @@
 			"__cHei": 32,
 			"identifier": "Cavernas_by_Adam_Saltsman",
 			"uid": 9,
-			"relPath": "atlas/Cavernas_by_Adam_Saltsman.png",
+			"relPath": "Cavernas_by_Adam_Saltsman.png",
 			"embedAtlas": null,
 			"pxWid": 96,
 			"pxHei": 256,
@@ -431,7 +431,7 @@
 					"__pxTotalOffsetX": 0,
 					"__pxTotalOffsetY": 0,
 					"__tilesetDefUid": 9,
-					"__tilesetRelPath": "atlas/Cavernas_by_Adam_Saltsman.png",
+					"__tilesetRelPath": "Cavernas_by_Adam_Saltsman.png",
 					"iid": "a2a53701-66b0-11ec-9cd7-43934582bcfa",
 					"levelId": 70,
 					"layerDefUid": 72,
