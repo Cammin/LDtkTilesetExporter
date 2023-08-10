@@ -48,7 +48,12 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Scripts\Assert.cs" />
         <Compile Include="Scripts\Exporter.cs" />
+        <Compile Include="Scripts\Extensions.cs" />
+        <Compile Include="Scripts\JsonDigger.cs" />
+        <Compile Include="Scripts\JsonDiggerExtensions.cs" />
+        <Compile Include="Scripts\LDtkAdditionalTilesFinder.cs" />
         <Compile Include="Scripts\LDtkTilesetDefExporter.cs" />
         <Compile Include="Scripts\LDtkTilesetDefinition.cs" />
         <Compile Include="Scripts\Program.cs" />
@@ -104,6 +109,10 @@
     </ItemGroup>
     <ItemGroup>
       <None Include="icon.ico" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Scripts\Digging\" />
+      <Folder Include="Scripts\Export\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
