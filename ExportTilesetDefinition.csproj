@@ -106,6 +106,7 @@
         <Compile Include="Scripts\Schema\Level\World.cs" />
         <Compile Include="Scripts\Util\Assert.cs" />
         <Compile Include="Scripts\Util\Extensions.cs" />
+        <Compile Include="Scripts\Util\Profiler.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="icon.ico" />

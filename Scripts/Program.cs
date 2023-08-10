@@ -7,8 +7,6 @@ namespace ExportTilesetDefinition
 {
     internal static class Program
     {
-        public static Stopwatch Watch = new Stopwatch();
-        
         public static void Main(string[] args)
         {
 #if DEBUG
@@ -22,12 +20,12 @@ namespace ExportTilesetDefinition
             }
 #endif
 
-            Watch.Start();
-            new Exporter().Start();
-            Watch.Stop();
+            Profiler.RunWithProfiling("BeginExport", () =>
+            {
+                new Exporter().Start();
+            });
             
-            Console.WriteLine($"Completed Operation in {Watch.ElapsedMilliseconds} ms");
-            
+
 #if DEBUG
             Console.Read();
 #endif

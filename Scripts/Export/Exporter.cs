@@ -71,10 +71,15 @@ namespace ExportTilesetDefinition
 
         public void ProcessProject(string projectPath)
         {
-            byte[] bytes = File.ReadAllBytes(projectPath);
-            LdtkJson json = JsonSerializer.Deserialize<LdtkJson>(bytes);
+            LdtkJson json = null;
             
-            LDtkTilesetDefExporter exporter = new LDtkTilesetDefExporter(projectPath, 8);
+            Profiler.RunWithProfiling("Deserialize Project", () =>
+            {
+                byte[] bytes = File.ReadAllBytes(projectPath);
+                json = JsonSerializer.Deserialize<LdtkJson>(bytes);
+            });
+
+            LDtkTilesetDefExporter exporter = new LDtkTilesetDefExporter(projectPath);
             exporter.ExportTilesetDefinitions(json);
         }
     }

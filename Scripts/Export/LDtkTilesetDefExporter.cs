@@ -15,12 +15,10 @@ namespace ExportTilesetDefinition
     /// </summary>
     internal sealed class LDtkTilesetDefExporter
     {
-        private readonly int _pixelsPerUnit;
         private readonly string _projectPath;
         
-        public LDtkTilesetDefExporter(string projectPath, int pixelsPerUnit)
+        public LDtkTilesetDefExporter(string projectPath)
         {
-            _pixelsPerUnit = pixelsPerUnit;
             _projectPath = projectPath;
         }
 
@@ -30,12 +28,18 @@ namespace ExportTilesetDefinition
         /// </summary>
         public void ExportTilesetDefinitions(LdtkJson json)
         {
-            var fieldSlices = new LDtkAdditionalTilesFinder(_projectPath).GetAllAdditionalSpritesInProject(json);
-            //Dictionary<int, HashSet<RectInt>> fieldSlices = null;
-            
+            Dictionary<int, HashSet<Rectangle>> fieldSlices = null;
+            Profiler.RunWithProfiling($"GetAdditionalTiles", () =>
+            {
+                fieldSlices = new LDtkAdditionalTilesFinder(_projectPath).GetAllAdditionalSpritesInProject(json);
+            });
+
             foreach (TilesetDefinition def in json.Defs.Tilesets)
             {
-                ExportTilesetDefinition(def, fieldSlices);
+                Profiler.RunWithProfiling($"Export {def.Identifier}", () =>
+                {
+                    ExportTilesetDefinition(def, fieldSlices);
+                });
             }
         }
 
@@ -66,7 +70,6 @@ namespace ExportTilesetDefinition
             LDtkTilesetDefinition data = new LDtkTilesetDefinition()
             {
                 Def = def,
-                Ppu = _pixelsPerUnit,
             };
 
             if (rectsToGenerate != null && rectsToGenerate.TryGetValue(def.Uid, out HashSet<Rectangle> rects))

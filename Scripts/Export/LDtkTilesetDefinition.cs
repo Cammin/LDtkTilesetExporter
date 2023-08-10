@@ -11,11 +11,6 @@ namespace ExportTilesetDefinition
     public class LDtkTilesetDefinition
     {
         /// <summary>
-        /// Pixels per unit; the value that's supplied by the project importer
-        /// </summary>
-        public int Ppu;
-        
-        /// <summary>
         /// AdditionalRects; Contains all tile rects that are not involved with the standard grid slices.
         /// These are not included with the sprite editor window integration, as not only do they overlap when trying to click on a sprite to edit, but also aren't gonna have tilemap assets generated for them anyways, as they wouldn't fit.
         /// These could be extra rects that are shaped like rectangles to slice, from tile field definitions, or icons maybe.
