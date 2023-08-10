@@ -36,12 +36,10 @@
     <ItemGroup>
         <Reference Include="System" />
         <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
         <Reference Include="System.Runtime.Serialization" />
         <Reference Include="System.Threading.Tasks.Extensions">
           <HintPath>Utf8Json\System.Threading.Tasks.Extensions.dll</HintPath>
         </Reference>
-        <Reference Include="System.Xml" />
         <Reference Include="Utf8Json">
           <HintPath>Utf8Json\Utf8Json.dll</HintPath>
         </Reference>
