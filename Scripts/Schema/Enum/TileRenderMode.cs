@@ -1,4 +1,4 @@
-﻿namespace LDtkUnity
+﻿namespace ExportTilesetDefinition
 {
     /// <summary>
     /// An enum describing how the the Entity tile is rendered inside the Entity bounds. Possible

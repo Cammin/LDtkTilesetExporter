@@ -1,4 +1,4 @@
-﻿namespace LDtkUnity
+﻿namespace ExportTilesetDefinition
 {
     /// <summary>
     /// Possible values: `Any`, `OnlySame`, `OnlyTags`, `OnlySpecificEntity`

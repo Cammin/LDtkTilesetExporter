@@ -1,4 +1,4 @@
-﻿namespace LDtkUnity
+﻿namespace ExportTilesetDefinition
 {
     /// <summary>
     /// Defines how tileIds array is used Possible values: `Single`, `Stamp`

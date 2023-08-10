@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace LDtkUnity
+namespace ExportTilesetDefinition
 {
     /// <summary>
     /// This object is just a grid-based coordinate used in Field values.

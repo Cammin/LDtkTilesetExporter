@@ -1,4 +1,4 @@
-﻿namespace LDtkUnity
+﻿namespace ExportTilesetDefinition
 {
     /// <summary>
     /// Possible values: `Rectangle`, `Ellipse`, `Tile`, `Cross`

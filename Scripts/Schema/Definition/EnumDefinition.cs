@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace LDtkUnity
+namespace ExportTilesetDefinition
 {
     public partial class EnumDefinition
     {

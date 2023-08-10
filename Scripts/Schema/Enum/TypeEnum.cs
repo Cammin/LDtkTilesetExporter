@@ -1,4 +1,4 @@
-﻿namespace LDtkUnity
+﻿namespace ExportTilesetDefinition
 {
     /// <summary>
     /// Type of the layer as Haxe Enum Possible values: `IntGrid`, `Entities`, `Tiles`,

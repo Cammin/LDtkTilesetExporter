@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace LDtkUnity
+namespace ExportTilesetDefinition
 {
     /// <summary>
     /// Nearby level info

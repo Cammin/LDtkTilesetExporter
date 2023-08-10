@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace LDtkUnity
+namespace ExportTilesetDefinition
 {
     /// <summary>
     /// This object describes the "location" of an Entity instance in the project worlds.

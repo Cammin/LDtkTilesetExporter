@@ -1,4 +1,4 @@
-﻿namespace LDtkUnity
+﻿namespace ExportTilesetDefinition
 {
     /// <summary>
     /// Possible values: `Manual`, `AfterLoad`, `BeforeSave`, `AfterSave`

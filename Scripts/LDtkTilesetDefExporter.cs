@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using LDtkUnity;
 using Utf8Json;
 
 namespace ExportTilesetDefinition

@@ -1,6 +1,6 @@
 ﻿using Utf8Json;
 
-namespace LDtkUnity
+namespace ExportTilesetDefinition
 {
     public static class Serialize
     {

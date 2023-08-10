@@ -1,4 +1,4 @@
-﻿namespace LDtkUnity
+﻿namespace ExportTilesetDefinition
 {
     /// <summary>
     /// Naming convention for Identifiers (first-letter uppercase, full uppercase etc.) Possible

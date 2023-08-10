@@ -6,7 +6,7 @@
 //
 //    var ldtkJson = LdtkJson.FromJson(jsonString);
 
-namespace LDtkUnity
+namespace ExportTilesetDefinition
 {
     using System;
     using System.Collections.Generic;

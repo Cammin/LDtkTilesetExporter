@@ -1,4 +1,4 @@
-﻿namespace LDtkUnity
+﻿namespace ExportTilesetDefinition
 {
     public enum EmbedAtlas { LdtkIcons };
 }

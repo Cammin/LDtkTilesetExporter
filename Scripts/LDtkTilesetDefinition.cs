@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using LDtkUnity;
 using Utf8Json;
 
 namespace ExportTilesetDefinition
