@@ -74,7 +74,7 @@ namespace ExportTilesetDefinition
 
             if (rectsToGenerate != null && rectsToGenerate.TryGetValue(def.Uid, out HashSet<Rectangle> rects))
             {
-                Console.WriteLine($"Got field slices for def {def.Identifier}: {rects.Count}");
+                Console.WriteLine($"Got {rects.Count} field slices for def {def.Identifier}:\n{string.Join("\n", rects)}");
                 data.Rects = rects.ToList();
             }
             

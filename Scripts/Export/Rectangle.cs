@@ -14,5 +14,10 @@ namespace ExportTilesetDefinition
         {
             return x == other.x && y == other.y && w == other.w && h == other.h;
         }
+
+        public override string ToString()
+        {
+            return $"(x:{x}, y:{y}, width:{w}, height:{h})";
+        }
     }
 }
