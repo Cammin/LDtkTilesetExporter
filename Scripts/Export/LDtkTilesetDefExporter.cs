@@ -89,7 +89,7 @@ namespace ExportTilesetDefinition
             }
             
             File.WriteAllBytes(writePath, bytes);
-            Console.WriteLine($"Wrote a new tileset definition \"{def.Identifier}\" at: {writePath}");
+            Console.WriteLine($"Wrote a new tileset definition \"{def.Identifier}\" at:\n{writePath}");
         }
         
     }

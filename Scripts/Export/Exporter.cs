@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using Utf8Json;
 
 namespace ExportTilesetDefinition
@@ -10,65 +11,36 @@ namespace ExportTilesetDefinition
     {
         public void Start()
         {
+            Assembly entryAsm = Assembly.GetExecutingAssembly();
+            Console.WriteLine($"ExportTilesetDefinition version {entryAsm.GetName().Version}");
+            
             string dir = Environment.CurrentDirectory;
             Console.WriteLine($"Working from {dir}");
 
-            bool gotOne = false;
-            foreach (string projectName in GetOpenAppProjectNames())
+            string[] args = Environment.GetCommandLineArgs();
+            if (args.IsNullOrEmpty() || args.Length < 2)
             {
-                string projectPath = TryProject(dir, projectName);
-                if (projectPath != null)
-                {
-                    gotOne = true;
-                    ProcessProject(projectPath);
-                }
+                Console.WriteLine("Didn't operate any files. No second arg!\nThere needs to be a project file name arg in the command.");
+                Console.Read();
+                return;
             }
+            
+            //string exePath = args[0];
+            string fileName = args[1];
+            
+            string projectPath = Path.Combine(dir, fileName) + ".ldtk";
 
-            if (!gotOne)
+            if (!File.Exists(projectPath))
             {
-                Console.WriteLine("Didn't operate any files. Was this export app launched from the correct working directory?");
+                Console.WriteLine($"This doesn't exist!\n\"{projectPath}\"\nDouble check that your file name is accurate and fix it if needed.");
+                Console.Read();
+                return;
             }
+            
+            Console.WriteLine($"Got file! {projectPath}");
+            ProcessProject(projectPath);
         }
         
-        public string TryProject(string dir, string projectName)
-        {
-            string path = Path.Combine(dir, projectName) + ".ldtk";
-
-            if (!File.Exists(path))
-            {
-                Console.WriteLine($"No file: {path}");
-                return null;
-            }
-            
-            Console.WriteLine($"Got file! {path}");
-            return path;
-        }
-
-        public List<string> GetOpenAppProjectNames()
-        {
-            List<string> projects = new List<string>();
-            
-            Process[] processes = Process.GetProcessesByName("LDtk");
-            foreach (var process in processes)
-            {
-                string title = process.MainWindowTitle;
-                if (string.IsNullOrEmpty(title))
-                {
-                    continue;
-                }
-                
-                string[] tokens = title.Split(' ');
-                projects.Add(tokens[0]);
-            }
-
-            if (projects.Count == 0)
-            {
-                throw new FileNotFoundException("Couldn't find an active LDtk app to get the project names from");
-            }
-
-            return projects;
-        }
-
         public void ProcessProject(string projectPath)
         {
             LdtkJson json = null;

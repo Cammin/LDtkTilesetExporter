@@ -5,12 +5,12 @@
 		"doc": "https://ldtk.io/json",
 		"schema": "https://ldtk.io/files/JSON_SCHEMA.json",
 		"appAuthor": "Sebastien 'deepnight' Benard",
-		"appVersion": "1.4.0",
+		"appVersion": "1.4.1",
 		"url": "https://ldtk.io"
 	},
 	"iid": "be4c1c60-7820-11ed-913e-298fa6eb84e1",
-	"jsonVersion": "1.4.0",
-	"appBuildId": 470941,
+	"jsonVersion": "1.4.1",
+	"appBuildId": 471015,
 	"nextUid": 165,
 	"identifierStyle": "Capitalize",
 	"toc": [],
@@ -38,7 +38,7 @@
 	"backupRelPath": null,
 	"levelNamePattern": "%world_Level_%idx",
 	"tutorialDesc": null,
-	"customCommands": [{ "command": "../bin/Debug/ExportTilesetDefinition.exe", "when": "AfterSave" }],
+	"customCommands": [{ "command": "../bin/Debug/ExportTilesetDefinition.exe TestAllFieldsLevels", "when": "AfterSave" }],
 	"flags": [ "PrependIndexToLevelFileNames", "UseMultilinesType" ],
 	"defs": { "layers": [
 		{
