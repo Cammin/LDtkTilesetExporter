@@ -26,7 +26,7 @@ namespace ExportTilesetDefinition
         /// <summary>
         /// This object is not actually used by LDtk. It ONLY exists to force explicit references to
         /// all types, to make sure QuickType finds them and integrate all of them. Otherwise,
-        /// Quicktype will drop types that are not explicitely used.j
+        /// Quicktype will drop types that are not explicitely used.
         /// </summary>
         [IgnoreDataMember]
         [DataMember(Name = "__FORCED_REFS")]
@@ -1162,6 +1162,12 @@ namespace ExportTilesetDefinition
         /// </summary>
         [DataMember(Name = "flipY")]
         public bool FlipY { get; set; }
+
+        /// <summary>
+        /// If TRUE, then the rule should be re-evaluated by the editor at one point
+        /// </summary>
+        [DataMember(Name = "invalidated")]
+        public bool Invalidated { get; set; }
 
         /// <summary>
         /// Default IntGrid value when checking cells outside of level bounds
