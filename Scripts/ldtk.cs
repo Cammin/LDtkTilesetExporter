@@ -1255,7 +1255,7 @@ namespace ExportTilesetDefinition
         /// Array containing all the possible tile IDs rectangles (picked randomly).
         /// </summary>
         [DataMember(Name = "tileRectsIds")]
-        public int[][] TileRectsIds { get; set; }
+        public int?[][] TileRectsIds { get; set; }
 
         /// <summary>
         /// Tile X offset
@@ -2015,7 +2015,7 @@ namespace ExportTilesetDefinition
         /// The *Tile ID* in the corresponding tileset.
         /// </summary>
         [DataMember(Name = "t")]
-        public int T { get; set; }
+        public int? T { get; set; }
     }
 
     /// <summary>
